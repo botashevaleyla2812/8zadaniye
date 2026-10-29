@@ -1,0 +1,268 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #202020;
+  background: #f5f5f5;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.site {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  min-height: 70px;
+  padding: 0 7%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.logo {
+  color: #202020;
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+nav button, .switch button {
+  border: 0;
+  background: transparent;
+  padding: 10px 12px;
+  color: #333;
+}
+
+nav button:hover, .switch button:hover {
+  color: #6b38d1;
+}
+
+nav .nav-register {
+  background: #6b38d1;
+  color: white;
+  border-radius: 6px;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  padding: 36px 18px;
+}
+
+.hero {
+  max-width: 1050px;
+  min-height: 470px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 48px;
+  /* Фоновая картинка пользователя находится в public/hero.jpg */
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0.08)),
+    url('/hero.jpg') center 42% / cover no-repeat;
+  color: white;
+}
+
+.hero-text {
+  max-width: 480px;
+}
+
+.small-title {
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.hero h1 {
+  font-size: clamp(34px, 5vw, 54px);
+  line-height: 1.05;
+  margin: 15px 0;
+}
+
+.hero p:not(.small-title) {
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.primary, .secondary {
+  border: 0;
+  border-radius: 6px;
+  padding: 12px 18px;
+  margin-top: 8px;
+}
+
+.primary {
+  background: #6b38d1;
+  color: white;
+}
+
+.primary:hover, nav .nav-register:hover {
+  background: #5428ad;
+}
+
+.secondary {
+  width: 100%;
+  background: #eeeeee;
+  color: #333;
+}
+
+.form-card {
+  background: white;
+  max-width: 430px;
+  margin: 10px auto;
+  padding: 28px;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+}
+
+.form-card h1 {
+  margin: 0 0 8px;
+}
+
+.form-card > p {
+  color: #666;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 22px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+input, select {
+  width: 100%;
+  padding: 11px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: white;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: 2px solid #c9b5f5;
+  border-color: #6b38d1;
+}
+
+form .primary {
+  width: 100%;
+}
+
+.switch {
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.switch button {
+  color: #6b38d1;
+  padding: 4px;
+}
+
+.message, .hint {
+  max-width: 430px;
+  margin: 18px auto 0;
+  padding: 12px 14px;
+  border-radius: 6px;
+  background: white;
+  border: 1px solid #ddd;
+  line-height: 1.5;
+}
+
+.hint {
+  font-size: 13px;
+}
+
+footer {
+  text-align: center;
+  padding: 22px;
+  color: #777;
+  font-size: 13px;
+}
+
+.loading {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.85);
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+@media (max-width: 650px) {
+  .header {
+    padding: 14px 5%;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  nav button {
+    padding: 8px;
+  }
+
+  main {
+    padding: 20px 12px;
+  }
+
+  .hero {
+    min-height: 420px;
+    padding: 26px;
+    background-position: center;
+  }
+
+  .form-card {
+    padding: 22px;
+  }
+}
+textarea {
+  width: 100%;
+  padding: 11px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: white;
+  font: inherit;
+  resize: vertical;
+}
+
+textarea:focus {
+  outline: 2px solid #c9b5f5;
+  border-color: #6b38d1;
+}
